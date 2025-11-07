@@ -17,15 +17,13 @@ Operations::Operations() {}
 
 void Operations::printMaze(vector<vector<int>> maze){
 
-    cout << "Original Maze: \n" <<endl;
+    cout << "Maze: \n" <<endl;
     for(auto& r : maze){
         for(int c : r){
             cout << setw(2) << c;
         }
         cout << endl;
     }
-
-    cout << endl;
 }
 
 void Operations::printPath(vector<pair<int, int>> path) {

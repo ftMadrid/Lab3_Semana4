@@ -33,7 +33,6 @@ int main(int argc, char *argv[])
 
     vector<pair<int, int>> bestPath;
     vector<pair<int, int>> actualPath;
-
     vector<vector<bool>> visited(rows, vector<bool>(columns, false));
 
     op.printMaze(maze);
@@ -43,8 +42,7 @@ int main(int argc, char *argv[])
     if (bestPath.empty()) {
         cout << "\n| No valid path to the exit was found." << endl;
     } else {
-
-        int steps = bestPath.size() - 1;
+        int steps = bestPath.size();
         cout << "\n| Shortest path found: " << steps << " steps" << endl;
         op.printPath(bestPath);
     }
