@@ -15,9 +15,9 @@ public:
     void printMaze(vector<vector<int>> maze);
     void printPath(vector<pair<int, int>> path);
     void searchPath(vector<vector<int>> maze, int y, int x,
-                    vector<pair<int, int>> actualPath,
-                    vector<pair<int, int>> bestPath,
-                    vector<vector<bool>> visited);
+                    vector<pair<int, int>>& actualPath,
+                    vector<pair<int, int>>& bestPath,
+                    vector<vector<bool>>& visited);
 };
 
 #endif

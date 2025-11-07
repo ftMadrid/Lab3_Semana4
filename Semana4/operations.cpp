@@ -40,9 +40,9 @@ void Operations::printPath(vector<pair<int, int>> path) {
 }
 
 void Operations::searchPath(vector<vector<int>> maze, int y, int x,
-                            vector<pair<int, int>> actualPath,
-                            vector<pair<int, int>> bestPath,
-                            vector<vector<bool> > visited){
+                            vector<pair<int, int>>& actualPath,
+                            vector<pair<int, int>>& bestPath,
+                            vector<vector<bool>>& visited){
 
     int rows = maze.size();
     int columns = maze[0].size();
@@ -64,7 +64,7 @@ void Operations::searchPath(vector<vector<int>> maze, int y, int x,
 
     if (y == rows - 1 && x == columns - 1) {
         if (bestPath.empty() || actualPath.size() < bestPath.size()) {
-            bestPath = actualPath; // updated here the best path
+            bestPath = actualPath;
         }
     } else {
         if (bestPath.empty() || actualPath.size() < bestPath.size()) {
@@ -73,8 +73,7 @@ void Operations::searchPath(vector<vector<int>> maze, int y, int x,
             searchPath(maze, y, x + 1, actualPath, bestPath, visited);
             searchPath(maze, y, x - 1, actualPath, bestPath, visited);
         }
-
+    }
     actualPath.pop_back();
     visited[y][x] = false;
-    }
 }

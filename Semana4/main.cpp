@@ -28,11 +28,11 @@ int main(int argc, char *argv[])
 
     };
 
-    vector<pair<int, int>> bestPath;
-    vector<pair<int, int>> actualPath;
-
     int rows = maze.size();
     int columns = maze[0].size();
+
+    vector<pair<int, int>> bestPath;
+    vector<pair<int, int>> actualPath;
 
     vector<vector<bool>> visited(rows, vector<bool>(columns, false));
 
